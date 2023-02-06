@@ -18,4 +18,4 @@ while True:
         conn.send("I am SERVER\n".encode())
 
     conn.close()
-    print ('client disconnected')
+    print ('client disconnected and shutdown')
