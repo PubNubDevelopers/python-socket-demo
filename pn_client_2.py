@@ -7,8 +7,10 @@ import os
 
 pnconfig = PNConfiguration()
 
-pnconfig.publish_key = 'enter your pubnub publish key here'
-pnconfig.subscribe_key = 'enter your pubnub subscribe key here'
+userId = os.path.basename(__file__)
+pnconfig.publish_key = 'demo'
+pnconfig.subscribe_key = 'demo'
+pnconfig.user_id = userId
 pnconfig.ssl = True
 
 pubnub = PubNub(pnconfig)
@@ -24,13 +26,14 @@ class MySubscribeCallback(SubscribeCallback):
     def status(self, pubnub, status):
         pass
     def message(self, pubnub, message):
-        print "from device 1: " + message.message
+        if message.publisher == userId : return
+        print ("from device " + message.publisher + ": " + message.message)
 
 pubnub.add_listener(MySubscribeCallback())
 pubnub.subscribe().channels("chan-1").execute()
 
 ## publish a message
 while True:
-    msg = raw_input("Input a message to publish: ")
+    msg = input("")
     if msg == 'exit': os._exit(1)
     pubnub.publish().channel("chan-1").message(str(msg)).pn_async(my_publish_callback)

@@ -12,10 +12,10 @@ while True:
     while True:
         data = conn.recv(4096)
         if not data: break
-        from_client += data
-        print from_client
+        from_client += data.decode('utf8')
+        print (from_client)
 
-        conn.send("I am SERVER\n")
+        conn.send("I am SERVER\n".encode())
 
     conn.close()
-    print 'client disconnected'
+    print ('client disconnected')

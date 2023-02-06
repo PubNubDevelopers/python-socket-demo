@@ -1,14 +1,45 @@
 # Sockets with Python
 
-Send data from client to server using Python sockets in **client.py** and **server.py**.
+This repository contains example code for exchanging data between a client and server over Python sockets:
+- `client.py`
+- `server.py`
 
-Send data from peer to peer (client to client) using PubNub with **pn_client_1.py** and **pn_client_2.py**.
+Code examples are also given for exchanging data between two Python clients directly using PubNub:
+- `pn_client_1.py`
+- `pn_client_2.py`
 
-Install the PubNub package with pip (lastest as of 01/2019):
-```bash
-pip install 'pubnub>=4.1.2'
-```
+## Running the Code (Python sockets)
+- [Install Python](https://www.python.org/downloads/)
+- Clone this repo to your machine
+- `python3 server.py`
+- `python3 client.py` (in a separate terminal)
 
-You **must** put in your **free** PubNub API keys to use **pn_client_1.py** and **pn_client_2.py**. Sign up at [https://dashboard.pubnub.com/signup](https://dashboard.pubnub.com/signup/?devrel_gh=ajb413-python-socket-demo)
+![Screenshot](https://raw.githubusercontent.com/PubNubDevelopers/python-socket-demo/master/media/python_sockets.png)
 
-Watch the tutorial video or read guide in the [Python Socket Programming Tutorial PubNub Blog post](https://www.pubnub.com/blog/socket-programming-in-python-client-server-p2p/?devrel_gh=ajb413-python-socket-demo).
+## Running the Code (PubNub)
+- Install the PubNub package with pip (lastest as of Feb 2023): `pip3 install 'pubnub>=7.1.0'`
+- `python3 pn_client_1.py`
+- `python3 pn_client_2.py` (in a separate terminal)
+
+![Screenshot](https://raw.githubusercontent.com/PubNubDevelopers/python-socket-demo/master/media/pubnub.png)
+
+To run this project yourself you can also use your own PubNub keys 
+
+### Get Your PubNub Keys
+
+<a href="https://dashboard.pubnub.com/signup">
+	<img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>
+</a>
+
+
+1. You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup/). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/).
+
+1. Sign in to your [PubNub Dashboard](https://admin.pubnub.com/).
+
+1. Click Apps, then **Create New App**.
+
+1. Give your app a name, and click **Create**.
+
+1. Click your new app to open its settings, then click its keyset.
+
+
